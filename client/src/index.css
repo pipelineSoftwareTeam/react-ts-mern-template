@@ -1,0 +1,170 @@
+:root {
+  /* Assign fonts */
+  --ff-primary: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --ff-accent: 'Inconsolata', monospace;
+
+  font-family: var(--ff-primary);
+  line-height: 1.5;
+
+  /* Set main colours */
+  --clr-primary-100: rgb(255, 255, 255);
+  --clr-secondary-800: rgb(0, 0, 0);
+
+  /* Set neutral colours */
+  --clr-neutral-100: rgb(255, 255, 255);
+  --clr-neutral-800: rgb(0, 0, 0);
+
+  /* Assign font weights */
+  --fw-regular: 300;
+  --fw-bold: 700;
+  --fw-accent-italic: 400;
+
+  /* Fixed font sizes */
+  --fs-300-fix: 1rem;
+  --fs-400-fix: 1.25rem;
+  --fs-450-fix: 1.5rem;
+  --fs-500-fix: 1.75rem;
+  --fs-600-fix: 2rem;
+  --fs-700-fix: 2.5rem;
+
+  /* Padding variables */
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.25rem;
+  --size-600: 1.5rem;
+  --size-700: 2rem;
+  --size-800: 2.5rem;
+  --size-900: 3rem;
+
+  /* Block flow */
+  --flow-spacer: 1em;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ---------------------------------------------------------------- */
+/* -----------------------------Resets----------------------------- */
+/* ---------------------------------------------------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin, padding and inherit font for all */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vw;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+svg,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* ---------------General styling - HTML elements------------------ */
+/* ---------------------------------------------------------------- */
+
+body {
+  margin: 0 auto;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    142deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  color: var(--clr-neutral-800);
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  padding: 50px;
+  font-weight: bold;
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+svg {
+  width: 200px;
+  fill: black;
+  animation: spinny 2s linear infinite;
+}
+
+.yeah__nice {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes spinny {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

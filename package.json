@@ -1,0 +1,15 @@
+{
+	"name": "mern-app-template",
+	"version": "1.0.0",
+	"description": "Package for starting both servers",
+	"main": "index.js",
+	"scripts": {
+		"dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\" ",
+		"format": "prettier --write ."
+	},
+	"author": "Oliver Jones",
+	"license": "ISC",
+	"dependencies": {
+		"concurrently": "^8.0.1"
+	}
+}
