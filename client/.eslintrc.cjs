@@ -34,7 +34,7 @@ module.exports = {
     'comma-dangle': 0,
     'jsx-quotes': ['error', 'prefer-single'],
     'import/extensions': 0,
-    'import/no-extraneous-dependencies': 'false',
+    'import/no-extraneous-dependencies': 0,
     'object-curly-newline': [
       'error',
       {
