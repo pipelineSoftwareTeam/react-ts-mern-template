@@ -1,4 +1,4 @@
-import SmileySmiley from '../assets/SmileySmiley'
+import SmileySmiley from '../assets/SmileySmiley';
 
 function Home() {
   return (
@@ -6,7 +6,7 @@ function Home() {
       <h1>Yeah Nice</h1>
       <SmileySmiley />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
