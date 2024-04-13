@@ -4,7 +4,7 @@
 	"description": "Package for starting both servers",
 	"main": "index.js",
 	"scripts": {
-		"dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\" ",
+		"dev": "concurrently \"cd server && npm run server\" \"cd frontend && npm run dev\" ",
 		"format": "prettier --write ."
 	},
 	"author": "Oliver Jones",

@@ -106,3 +106,8 @@ Any protected routes require a JWT bearer token in the HTTP request header.
 Romeo done! Happy coding 💪🏻
 
 _Please send a PR for any suggestions for improvement to this template_ 😃
+
+### Contributors
+
+Rikie Patrick
+Oliver Jones
