@@ -1,15 +1,22 @@
 {
-	"name": "backend",
+	"name": "server",
 	"version": "1.0.0",
-	"description": "mern-backend-template",
-	"main": "server.cjs",
+	"description": "server",
+	"main": "server.js",
+	"type": "module",
 	"scripts": {
-		"start": "node server.cjs",
-		"server": "nodemon server.cjs",
-		"format": "prettier --write ."
+		"server": "nodemon server.js --ignore client",
+		"client": "cd ../client && npm run dev",
+		"start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" ",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"setup-project": "npm i && cd ../client && npm i"
 	},
 	"author": "Oliver Jones",
-	"license": "MIT",
+	"license": "ISC",
+	"devDependencies": {
+		"concurrently": "^8.0.1",
+		"nodemon": "^2.0.22"
+	},
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"colors": "^1.4.0",
@@ -19,9 +26,8 @@
 		"express-async-handler": "^1.2.0",
 		"jsonwebtoken": "^9.0.0",
 		"lodash": "^4.17.21",
-		"mongoose": "^8.3.1"
-	},
-	"devDependencies": {
-		"nodemon": "^3.1.0"
+		"mongoose": "^7.2.1",
+		"morgan": "^1.10.0",
+		"validator": "^13.9.0"
 	}
 }
