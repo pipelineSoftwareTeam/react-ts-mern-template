@@ -1,12 +1,12 @@
 // Mongoose import
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema, InferSchemaType } from 'mongoose';
 
 // Data types import
 import {
 	requiredNameString,
 	requiredEmailString,
 	requiredPasswordString,
-} from './dataTypes.js';
+} from './dataTypes.ts';
 
 // User model
 const userModel = {
@@ -17,6 +17,7 @@ const userModel = {
 
 // Create new schema
 const userSchema = new Schema(userModel, { timestamps: true });
+type User = InferSchemaType<typeof userSchema>;
 
 // Create mongoose model
 const userSchemaModel = mongoose.model('User', userSchema);

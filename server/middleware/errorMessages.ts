@@ -1,25 +1,25 @@
-import HTTP_STATUS from '../data/httpStatus.js';
+import HTTP_STATUS from '../data/httpStatus.ts';
 
 const errorMessage = {
 	statusCode: HTTP_STATUS.BAD,
 	message: 'Unexpected error. Please try again.',
 };
 
-const setDefaultError = (err) => {
+const setDefaultError = (err: any) => {
 	(errorMessage.statusCode =
 		err.statusCode || HTTP_STATUS.INTERNAL_SERVER_ERROR),
 		(errorMessage.message =
 			`${err.message}` || 'Something went wrong, please try again later.');
 };
 
-const setValidationError = (err) => {
+const setValidationError = (err: any) => {
 	errorMessage.statusCode = HTTP_STATUS.BAD;
 	errorMessage.message = `${Object.values(err.errors)
-		.map((item) => item.message)
+		.map((item: any) => item.message)
 		.join(', ')}`;
 };
 
-const setDuplicateError = (err) => {
+const setDuplicateError = (err: any) => {
 	errorMessage.statusCode = HTTP_STATUS.BAD;
 	errorMessage.message = `${err.keyValue.email} already exists. Please login.`;
 };

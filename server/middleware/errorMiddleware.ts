@@ -1,12 +1,20 @@
-import HTTP_STATUS from '../data/httpStatus.js';
+import HTTP_STATUS from '../data/httpStatus.ts';
 import {
 	errorMessage,
 	setDefaultError,
 	setValidationError,
 	setDuplicateError,
-} from './errorMessages.js';
+} from './errorMessages.ts';
 
-const errorMiddleware = (err, req, res, next) => {
+// Type imports
+import { Request, Response, NextFunction } from 'express';
+
+const errorMiddleware = (
+	err: any,
+	req: Request,
+	res: Response,
+	next: NextFunction
+) => {
 	setDefaultError(err);
 
 	if (err.name === 'ValidationError') {

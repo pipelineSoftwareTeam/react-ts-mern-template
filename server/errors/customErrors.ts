@@ -1,15 +1,15 @@
-import HTTP_STATUS from '../data/httpStatus.js';
+import HTTP_STATUS from '../data/httpStatus.ts';
 
 // Custom Error API
 class CustomError extends Error {
-	constructor(message) {
+	constructor(message: string) {
 		super(message);
 	}
 }
 
 // Bad request error
 class BadRequestError extends CustomError {
-	constructor(message) {
+	constructor(message: string) {
 		super(message);
 		this.statusCode = HTTP_STATUS.BAD;
 	}
@@ -17,7 +17,7 @@ class BadRequestError extends CustomError {
 
 // Not found error
 class NotFoundError extends CustomError {
-	constructor(message) {
+	constructor(message: string) {
 		super(message);
 		this.statusCode = HTTP_STATUS.NOT_FOUND;
 	}
