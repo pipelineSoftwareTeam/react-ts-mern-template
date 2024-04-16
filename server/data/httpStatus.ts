@@ -1,4 +1,4 @@
-enum HTTP_STATUS {
+export enum HTTP_STATUS {
 	OK = 200,
 	CREATED = 201,
 	BAD = 400,
@@ -10,5 +10,3 @@ enum HTTP_STATUS {
 
 // Could use this....
 // https://gist.github.com/scokmen/f813c904ef79022e84ab2409574d1b45
-
-export default HTTP_STATUS;

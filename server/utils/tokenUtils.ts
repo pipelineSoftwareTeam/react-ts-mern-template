@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 // Type imports
-import { IDecode } from '../types';
+import { IDecode } from 'types';
 
 export const generateToken = (id: string) => {
 	return jwt.sign({ id }, process.env.JWT_SECRET!, {

@@ -8,7 +8,7 @@ import {
 // Type imports
 import { ErrorRequestHandler } from 'express';
 
-const errorMiddleware: ErrorRequestHandler = (
+export const errorMiddleware: ErrorRequestHandler = (
 	err,
 	_req,
 	res,
@@ -28,5 +28,3 @@ const errorMiddleware: ErrorRequestHandler = (
 	res.json({ message: errorMessage.message });
 	// full_msg: err,
 };
-
-export default errorMiddleware;
