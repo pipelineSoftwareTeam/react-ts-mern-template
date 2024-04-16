@@ -25,7 +25,7 @@ import {
 // @access        Private
 const getUsers = asyncHandler(async (req: Request, res: Response) => {
 	const users = await User.find({}).select('-password');
-	res.send(HTTP_STATUS.OK).json({ users });
+	res.status(HTTP_STATUS.OK).json({ users });
 });
 
 // @description   Login user
@@ -118,7 +118,6 @@ const updateUser = asyncHandler(
 			}
 
 			const { name, email } = req.body;
-
 			const user = await User.findById(req.user?.id).select('-password');
 
 			if (!user) {

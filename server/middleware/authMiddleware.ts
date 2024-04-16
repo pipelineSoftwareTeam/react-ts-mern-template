@@ -27,9 +27,7 @@ const protectRoute: RequestHandler = asyncHandler(
 			try {
 				const token = authHeader.split(' ')[1];
 				const decoded = verifyToken(token);
-				if (req.user) {
-					req.user.id = decoded.id;
-				}
+				req.user = {id: decoded.id}
 				next();
 			} catch (err) {
 				sendNoAuth(res, 'Authentication failed');
