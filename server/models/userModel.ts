@@ -6,7 +6,7 @@ import {
 	requiredNameString,
 	requiredEmailString,
 	requiredPasswordString,
-} from './dataTypes.ts';
+} from './dataTypes';
 
 // User model
 const userModel = {
@@ -17,7 +17,8 @@ const userModel = {
 
 // Create new schema
 const userSchema = new Schema(userModel, { timestamps: true });
-type User = InferSchemaType<typeof userSchema>;
+
+export type User = InferSchemaType<typeof userSchema>;
 
 // Create mongoose model
 const userSchemaModel = mongoose.model('User', userSchema);

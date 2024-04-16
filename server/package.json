@@ -2,11 +2,12 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "express server + typescript",
-	"main": "server.js",
+	"main": "index.ts",
 	"scripts": {
 		"build": "rimraf dist && npx tsc",
 		"preserve": "npm run build",
-		"serve": "concurrently \"npx tsc -w\" \"nodemon dist/index.js\" --ignore client",
+		"dev": "nodemon index.ts",
+		"serve": "concurrently \"npx tsc\" \"nodemon index.ts\" --ignore client",
 		"client": "cd ../client && npm run dev",
 		"start": "concurrently --kill-others-on-fail \"npm run serve\" \"npm run client\" ",
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -38,8 +39,20 @@
 		"express-async-handler": "^1.2.0",
 		"jsonwebtoken": "^9.0.0",
 		"lodash": "^4.17.21",
+		"module-alias": "^2.2.3",
 		"mongoose": "^7.2.1",
 		"morgan": "^1.10.0",
 		"validator": "^13.9.0"
-	}
+	},
+	"_moduleAliases": {
+    "types": "dist/types",
+	"utils": "dist/utils",
+	"routes": "dist/routes",
+	"models": "dist/models",
+	"middleware": "dist/middleware",
+	"errors": "dist/errors",
+	"data": "dist/data",
+	"controllers": "dist/controllers",
+	"connect": "dist/connect"
+  }
 }
