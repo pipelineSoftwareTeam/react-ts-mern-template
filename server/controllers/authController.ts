@@ -1,22 +1,22 @@
 // Imports
 import asyncHandler from 'express-async-handler';
-import HTTP_STATUS from '../data/httpStatus.js';
+import HTTP_STATUS from '../data/httpStatus';
 import _ from 'lodash';
-import { hashPassword, comparePassword } from '../utils/hashUtils.js';
-import { generateToken } from '../utils/tokenUtils.js';
+import { hashPassword, comparePassword } from '../utils/hashUtils';
+import { generateToken } from '../utils/tokenUtils';
 
 // Type imports
 import { Request, Response, NextFunction } from 'express';
-import { RequestWithUser } from '../types/index.js';
+import { RequestWithUser } from '../types';
 
 // Database
-import User from '../models/userModel.js';
+import User from '../models/userModel';
 
 // Error handlers
 import {
 	BadRequestError,
 	UnauthenticatedError,
-} from '../errors/customErrors.js';
+} from '../errors/customErrors';
 
 // Managing login and registration
 
@@ -82,14 +82,14 @@ const register = asyncHandler(
 				);
 			}
 
-			const userAlreadyRegistered = await User.findOne({ email });
+			const userAlreadyRegistered = await User.findOne({ email: _.toLower(email) });
 
 			if (userAlreadyRegistered) {
 				throw new BadRequestError('Already registered. Please login.');
 			}
 
 			const newUser = await User.create({
-				name: _.capitalize(name),
+				name: _.startCase(_.toLower(name)),
 				email: _.toLower(email),
 				password: password && (await hashPassword(password)),
 			});

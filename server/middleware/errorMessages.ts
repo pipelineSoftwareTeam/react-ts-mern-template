@@ -1,4 +1,4 @@
-import HTTP_STATUS from '../data/httpStatus.ts';
+import HTTP_STATUS from '../data/httpStatus';
 
 const errorMessage = {
 	statusCode: HTTP_STATUS.BAD,

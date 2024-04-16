@@ -6,7 +6,7 @@ import {
 	requiredNameString,
 	requiredEmailString,
 	requiredPasswordString,
-} from './dataTypes.ts';
+} from './dataTypes';
 
 // User model
 const userModel = {

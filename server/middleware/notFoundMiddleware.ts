@@ -1,4 +1,4 @@
-import HTTP_STATUS from '../data/httpStatus.ts';
+import HTTP_STATUS from '../data/httpStatus';
 
 // Type imports
 import { Request, Response, RequestHandler } from 'express';

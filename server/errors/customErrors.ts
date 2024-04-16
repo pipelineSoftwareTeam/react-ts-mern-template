@@ -1,4 +1,4 @@
-import HTTP_STATUS from '../data/httpStatus.ts';
+import HTTP_STATUS from '../data/httpStatus';
 
 // Custom Error API
 class CustomError extends Error {
@@ -9,6 +9,7 @@ class CustomError extends Error {
 
 // Bad request error
 class BadRequestError extends CustomError {
+	statusCode: number;
 	constructor(message: string) {
 		super(message);
 		this.statusCode = HTTP_STATUS.BAD;
@@ -17,6 +18,7 @@ class BadRequestError extends CustomError {
 
 // Not found error
 class NotFoundError extends CustomError {
+	statusCode: number;
 	constructor(message: string) {
 		super(message);
 		this.statusCode = HTTP_STATUS.NOT_FOUND;
@@ -25,7 +27,8 @@ class NotFoundError extends CustomError {
 
 // Unauthenticated error
 class UnauthenticatedError extends CustomError {
-	constructor(message) {
+	statusCode: number;
+	constructor(message: string) {
 		super(message);
 		this.statusCode = HTTP_STATUS.UNAUTHORIZED;
 	}

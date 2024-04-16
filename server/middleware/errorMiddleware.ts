@@ -1,10 +1,10 @@
-import HTTP_STATUS from '../data/httpStatus.ts';
+import HTTP_STATUS from '../data/httpStatus';
 import {
 	errorMessage,
 	setDefaultError,
 	setValidationError,
 	setDuplicateError,
-} from './errorMessages.ts';
+} from './errorMessages';
 
 // Type imports
 import { Request, Response, NextFunction } from 'express';

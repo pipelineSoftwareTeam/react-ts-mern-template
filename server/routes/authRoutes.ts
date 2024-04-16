@@ -7,9 +7,9 @@ import {
 	updateUser,
 	updatePassword,
 	deleteUser,
-} from '../controllers/authController.js';
+} from '../controllers/authController';
 
-import protectRoute from '../middleware/authMiddleware.js';
+import protectRoute from '../middleware/authMiddleware';
 
 const router: Router = express.Router();
 

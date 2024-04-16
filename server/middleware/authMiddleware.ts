@@ -1,15 +1,15 @@
 import asyncHandler from 'express-async-handler';
-import HTTP_STATUS from '../data/httpStatus.js';
+import HTTP_STATUS from '../data/httpStatus';
 
 // Type imports
 import { Response, RequestHandler, NextFunction } from 'express';
-import { RequestWithUser } from '../types/index.js';
+import { RequestWithUser } from '../types/index';
 
 // Helper Functions
-import { verifyToken } from '../utils/tokenUtils.js';
+import { verifyToken } from '../utils/tokenUtils';
 
 // Error handlers
-import { UnauthenticatedError } from '../errors/customErrors.js';
+import { UnauthenticatedError } from '../errors/customErrors';
 
 const sendNoAuth = (response: Response, msg: string) => {
 	response.status(HTTP_STATUS.UNAUTHORIZED);

@@ -3,18 +3,19 @@ import express, { Express, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
+import colors from 'colors';
 
 // Database
-import connectDB from './connect/db.ts';
+import connectDB from './connect/db';
 
 // Routes
-import endpoint from './data/endpoints.ts';
-import authRoutes from './routes/authRoutes.ts';
+import endpoint from './data/endpoints';
+import authRoutes from './routes/authRoutes';
 
 // Middleware
-import notFoundMiddleware from './middleware/notFoundMiddleware.ts';
-import errorMiddleware from './middleware/errorMiddleware.ts';
-import protectRoute from './middleware/authMiddleware.ts';
+import notFoundMiddleware from './middleware/notFoundMiddleware';
+import errorMiddleware from './middleware/errorMiddleware';
+import protectRoute from './middleware/authMiddleware';
 
 dotenv.config();
 
@@ -47,5 +48,5 @@ app.use(notFoundMiddleware);
 app.use(errorMiddleware);
 
 app.listen(port, () => {
-	console.log(`Server is listening on port: ${port}!`);
+	console.log(`Server is listening on port: ${colors.bgMagenta(port.toString())}`);
 });
