@@ -2,8 +2,8 @@ import asyncHandler from 'express-async-handler';
 import HTTP_STATUS from '../data/httpStatus';
 
 // Type imports
-import { Response, RequestHandler, NextFunction } from 'express';
-import { RequestWithUser } from '../types/index';
+import { Response, RequestHandler } from 'express';
+// import { AuthRequest } from '../types/index';
 
 // Helper Functions
 import { verifyToken } from '../utils/tokenUtils';
@@ -17,7 +17,7 @@ const sendNoAuth = (response: Response, msg: string) => {
 };
 
 const protectRoute: RequestHandler = asyncHandler(
-	async (req: RequestWithUser, res: Response, next: NextFunction) => {
+	async (req, res, next) => {
 		const authHeader = req.headers.authorization;
 		if (!authHeader) {
 			sendNoAuth(res, 'Authentication failed');

@@ -1,4 +1,3 @@
-import HTTP_STATUS from '../data/httpStatus';
 import {
 	errorMessage,
 	setDefaultError,
@@ -7,13 +6,13 @@ import {
 } from './errorMessages';
 
 // Type imports
-import { Request, Response, NextFunction } from 'express';
+import { ErrorRequestHandler } from 'express';
 
-const errorMiddleware = (
-	err: any,
-	req: Request,
-	res: Response,
-	next: NextFunction
+const errorMiddleware: ErrorRequestHandler = (
+	err,
+	_req,
+	res,
+	_next
 ) => {
 	setDefaultError(err);
 
@@ -21,7 +20,7 @@ const errorMiddleware = (
 		setValidationError(err);
 	}
 
-	if (err.code && err.code === 11000) {
+	if (err?.code === 11000) {
 		setDuplicateError(err);
 	}
 
