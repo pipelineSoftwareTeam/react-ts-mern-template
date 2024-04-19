@@ -5,11 +5,11 @@
 	"main": "index.ts",
 	"scripts": {
 		"build": "rimraf dist && npx tsc",
-		"preserve": "npm run build",
+		"predev": "npm run build",
 		"dev": "nodemon index.ts",
-		"serve": "concurrently \"npx tsc\" \"nodemon index.ts\" --ignore client",
+		"preserve": "npm run build",
 		"client": "cd ../client && npm run dev",
-		"start": "concurrently --kill-others-on-fail \"npm run serve\" \"npm run client\" ",
+		"serve": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run client\" ",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"setup-project": "npm i && cd ../client && npm i"
 	},
@@ -20,6 +20,7 @@
 		"@types/express": "^4.17.21",
 		"@types/jsonwebtoken": "^9.0.6",
 		"@types/lodash": "^4.17.0",
+		"@types/module-alias": "^2.0.4",
 		"@types/mongoose": "^5.11.97",
 		"@types/morgan": "^1.9.9",
 		"@types/node": "^20.12.7",
@@ -27,6 +28,7 @@
 		"concurrently": "^8.0.1",
 		"nodemon": "^2.0.22",
 		"rimraf": "^5.0.5",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.4.5"
 	},
 	"dependencies": {
@@ -45,14 +47,14 @@
 		"validator": "^13.9.0"
 	},
 	"_moduleAliases": {
-    "types": "dist/types",
-	"utils": "dist/utils",
-	"routes": "dist/routes",
-	"models": "dist/models",
-	"middleware": "dist/middleware",
-	"errors": "dist/errors",
-	"data": "dist/data",
-	"controllers": "dist/controllers",
-	"connect": "dist/connect"
-  }
+		"types": "dist/types",
+		"utils": "dist/utils",
+		"routes": "dist/routes",
+		"models": "dist/models",
+		"middleware": "dist/middleware",
+		"errors": "dist/errors",
+		"data": "dist/data",
+		"controllers": "dist/controllers",
+		"connect": "dist/connect"
+	}
 }

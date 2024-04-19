@@ -1,5 +1,13 @@
 // Mongoose import
-import mongoose, { Schema, InferSchemaType } from 'mongoose';
+import mongoose, { Schema, Model } from 'mongoose';
+
+// Types
+interface UserType {
+	// _id: string;
+	name: string;
+	email: string;
+	password: string;
+}
 
 // Data types import
 import {
@@ -16,11 +24,9 @@ const userModel = {
 };
 
 // Create new schema
-const userSchema = new Schema(userModel, { timestamps: true });
-
-export type User = InferSchemaType<typeof userSchema>;
+const userSchema = new Schema<UserType>(userModel, {
+	timestamps: true,
+});
 
 // Create mongoose model
-const userSchemaModel = mongoose.model('User', userSchema);
-
-export default userSchemaModel;
+export const User = mongoose.model<UserType>('User', userSchema);

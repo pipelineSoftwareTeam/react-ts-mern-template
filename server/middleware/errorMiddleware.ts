@@ -8,12 +8,7 @@ import {
 // Type imports
 import { ErrorRequestHandler } from 'express';
 
-export const errorMiddleware: ErrorRequestHandler = (
-	err,
-	_req,
-	res,
-	_next
-) => {
+export const errorMiddleware: ErrorRequestHandler = (err, _req, res, _next) => {
 	setDefaultError(err);
 
 	if (err.name === 'ValidationError') {
