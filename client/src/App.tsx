@@ -3,19 +3,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // Page Imports
 import { Home, NotFound } from './pages';
 
-export function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-}
+export const App = () => (
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
 
-export function WrappedApp() {
-  return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
-}
+export const WrappedApp = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);

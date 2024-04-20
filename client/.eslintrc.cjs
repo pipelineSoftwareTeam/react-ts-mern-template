@@ -20,14 +20,35 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react-refresh', 'prettier'],
+  plugins: ['react-refresh', 'prettier', 'react-hooks'],
 
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
+    'react-hooks/exhaustive-deps': 'error',
+    'no-console': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+    ],
+    'arrow-body-style': ['error', 'as-needed'],
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+      },
     ],
   },
 };

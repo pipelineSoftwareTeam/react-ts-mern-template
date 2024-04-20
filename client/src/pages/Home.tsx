@@ -1,12 +1,10 @@
-import SmileySmiley from '../assets/SmileySmiley';
+import SmileySmiley from 'assets/SmileySmiley';
 
-function Home() {
-  return (
-    <div className="yeah__nice">
-      <h1>Yeah Nice</h1>
-      <SmileySmiley />
-    </div>
-  );
-}
+const Home = () => (
+  <div data-testid="home" className="yeah__nice">
+    <h1>Yeah Nice</h1>
+    <SmileySmiley title="smiley" />
+  </div>
+);
 
 export default Home;

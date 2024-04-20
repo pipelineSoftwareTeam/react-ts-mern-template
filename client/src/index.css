@@ -150,7 +150,7 @@ h1 {
 }
 
 svg {
-  width: 200px;
+  width: 5rem;
   fill: black;
   animation: spinny 2s linear infinite;
 }
@@ -158,7 +158,6 @@ svg {
 .yeah__nice {
   display: flex;
   align-items: center;
-  flex-direction: column;
 }
 
 @keyframes spinny {
