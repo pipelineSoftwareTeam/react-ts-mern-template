@@ -18,14 +18,14 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      pages: path.resolve(__dirname, './src/pages'),
-      components: path.resolve(__dirname, './src/components'),
-      types: path.resolve(__dirname, './src/types'),
-      assets: path.resolve(__dirname, './src/assets'),
-      hooks: path.resolve(__dirname, './src/hooks'),
-      public: path.resolve(__dirname, './src/public'),
-      utils: path.resolve(__dirname, './src/utils'),
+      '': path.resolve(__dirname, './'),
+      pages: path.resolve(__dirname, '/pages'),
+      components: path.resolve(__dirname, '/components'),
+      types: path.resolve(__dirname, '/types'),
+      assets: path.resolve(__dirname, '/assets'),
+      hooks: path.resolve(__dirname, '/hooks'),
+      public: path.resolve(__dirname, '/public'),
+      utils: path.resolve(__dirname, '/utils'),
     },
   },
 });
