@@ -1,4 +1,4 @@
-import { SmileySmiley } from 'assets';
+import { SmileySmiley } from '@/assets';
 
 const Home = () => (
   <div data-testid="home" className="yeah__nice">

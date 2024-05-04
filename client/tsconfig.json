@@ -16,14 +16,7 @@
     "types": ["vitest/globals"],
     "baseUrl": ".",
     "paths": {
-      "/*": ["./src/*", "./dist/*"],
-      "pages": ["src/pages"],
-      "components": ["src/components"],
-      "types": ["src/types"],
-      "assets": ["src/assets/"],
-      "hooks": ["src/hooks"],
-      "public": ["src/public"],
-      "utils": ["src/utils"]
+      "@/*": ["src/*"]
     },
 
     /* Linting */

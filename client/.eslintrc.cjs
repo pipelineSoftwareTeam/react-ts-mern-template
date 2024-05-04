@@ -26,6 +26,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
     'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
     'react-hooks/exhaustive-deps': 'error',
     'no-console': 'off',
     'react-refresh/only-export-components': [
