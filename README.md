@@ -43,7 +43,7 @@ Note: _you will need to create a MongoDB database collection, and input info int
 Navigate to where you want to store the repo, then npm install all node modules
 
 ```
-$ git clone https://github.com/ojones44/mern-app-template.git
+$ git clone https://github.com/pipelineSoftwareTeam/react-ts-mern-template.git
 
 $ cd mern-app-template
 $ npm run setup

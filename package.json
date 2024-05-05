@@ -1,7 +1,10 @@
 {
-	"name": "mern-app-template",
+	"name": "@pipeline_software/mern-app-template",
 	"version": "1.0.0",
-	"description": "Package for starting both servers",
+	"description": "MERN app template with TypeScript",
+	"bin": {
+		"mern-app-template": "bin/index.js"
+	},
 	"main": "index.js",
 	"scripts": {
 		"setup": "concurrently \"npm install\" \"cd client && npm install\" \"cd server && npm install\" ",
