@@ -8,7 +8,9 @@ MERN App Template 💻
 
 ### Project Starter 🚀
 
-A basic MERN app template, with a RESTful API and full CRUD functionality for a user database.
+MERN app template + Vite + TypeScript + Testing Library, with ESLint and Prettier configs, and a RESTful API with full CRUD functionality for a user database.
+
+This template is designed for anyone wanting to build a full stack web application and immediately focus on writing the code, rather than spending time creating folders, files, configs and databases. All packages needed are included in the package.json files and can be installed with one command from the top level _(see further below)_.
 
 ---
 
@@ -18,28 +20,19 @@ A basic MERN app template, with a RESTful API and full CRUD functionality for a 
 
 Template includes:
 
-> 1.  React with Vite configuration
+> 1.  React with TS & Vite configuration
 > 2.  ESLint and Prettier (airbnb)
-> 3.  React Router
-> 4.  Template frontend file structure
-> 5.  Template CSS file structure with generic variables (not setup with a library in mind)
-> 6.  Template server file structure with example API for a user database
-> 7.  JWT, bcrypt, CORS and auth middleware
-> 8.  .env template file which includes the variables you need to fill in with your info
+> 3.  Concurrently npm package
+> 4.  React Router
+> 5.  Template frontend file structure
+> 6.  Template CSS file structure with generic variables (not setup with a library in mind)
+> 7.  Template server file structure with example Rest API for a user database
+> 8.  JWT, bcrypt, CORS and auth middleware
+> 9.  .env template file which includes the variables you need to fill in with your info
+> 10. React testing library, vitest + MSW
+> 11. Module aliases for client and server folders
 
-Project includes notes in the backend files to briefly explain what the code is doing
-
-Note: _you will need to create a MongoDB database collection, and input info into the .env file provided. You will also need ESLint and Prettier installed as extensions in VSCode._
-
----
-
-### Attributes 🙏🏻
-
-<br>
-
-Server code setup with the help of Traversy Media MERN stack series:
-
-> https://www.youtube.com/watch?v=-0exw-9YJBo&list=PLTMNWTDdd5z_CtvbzG6r1f4hjnCaphPTV
+Note: _you will need to create a MongoDB database collection, and input info into the .env file provided._
 
 ---
 
@@ -53,51 +46,54 @@ Navigate to where you want to store the repo, then npm install all node modules
 $ git clone https://github.com/ojones44/mern-app-template.git
 
 $ cd mern-app-template
-$ npm install
+$ npm run setup
 
-$ cd mern-app-template/client
-$ npm install
-
-$ cd mern-app-template/server
-$ npm install
 ```
 
 ---
 
-### Spinning up servers 🚗
+### Spinning up project 🚗
 
 <br>
 
-Frontend: <br>
+Client (individually): <br>
 
 ```
 $ npm run dev
 ```
 
-Backend: <br>
-
-```
-$ npm run server
-```
-
-Concurrently (from top level): <br>
+Server (individually): <br>
 
 ```
 $ npm run dev
+```
+
+_or using Concurrently..._ <br>
+
+From top level of project:
+
+```
+$ npm run dev
+```
+
+From server folder:
+
+```
+$ npm run serve
 ```
 
 ---
 
 ### API endpoints
 
-| Functionality     | Route               | HTTP Method | Protected? |
-| ----------------- | ------------------- | ----------- | ---------- |
-| Get users         | /api/users          | GET         | Y          |
-| Get user by id    | /api/users/me       | GET         | Y          |
-| Update user by id | /api/users/:id      | PUT         | Y          |
-| Delete user by id | /api/users/:id      | DELETE      | Y          |
-| Register user     | /api/users/register | POST        | N          |
-| Login user        | /api/users/login    | POST        | N          |
+| Functionality        | Route                  | HTTP Method | Protected? |
+| -------------------- | ---------------------- | ----------- | ---------- |
+| Get users            | /api/auth              | GET         | Y          |
+| Login user           | /api/auth/login        | POST        | N          |
+| Register user        | /api/auth/register     | POST        | N          |
+| Update user          | /api/auth/:id          | PUT         | Y          |
+| Update user password | /api/auth/password/:id | PUT         | Y          |
+| Delete user          | /api/auth/:id          | DELETE      | Y          |
 
 Any protected routes require a JWT bearer token in the HTTP request header.
 
@@ -107,7 +103,7 @@ Romeo done! Happy coding 💪🏻
 
 _Please send a PR for any suggestions for improvement to this template_ 😃
 
-### Contributors
+### Contributors 👇🏻
 
-Rikie Patrick
-Oliver Jones
+[![portfolio](https://img.shields.io/badge/oliver_jones-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ojones44) <br/>
+[![portfolio](https://img.shields.io/badge/rikie_patrick-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/1sAndZeros) <br/>
