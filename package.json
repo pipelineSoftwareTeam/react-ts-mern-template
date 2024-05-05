@@ -1,17 +1,20 @@
 {
-	"name": "@pipeline_software/mern-app-template",
+	"name": "@pipeline_software/react-ts-mern-template",
 	"version": "1.0.0",
 	"description": "MERN app template with TypeScript",
 	"bin": {
-		"mern-app-template": "bin/index.js"
+		"react-ts-mern-template": "bin/index.js"
 	},
 	"main": "index.js",
+	"repository": {
+		"url": "https://github.com/pipelineSoftwareTeam/react-ts-mern-template"
+	},
 	"scripts": {
 		"setup": "concurrently \"npm install\" \"cd client && npm install\" \"cd server && npm install\" ",
 		"dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" ",
 		"format": "prettier --write ."
 	},
-	"author": "Oliver Jones",
+	"author": "Pipeline Software Team",
 	"license": "ISC",
 	"dependencies": {
 		"concurrently": "^8.0.1"
