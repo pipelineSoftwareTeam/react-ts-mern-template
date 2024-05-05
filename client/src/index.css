@@ -138,6 +138,14 @@ body {
   color: var(--clr-neutral-800);
 }
 
+section {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60vw;
+}
+
 li {
   list-style: none;
 }
@@ -150,16 +158,61 @@ h1 {
 }
 
 svg {
-  width: 200px;
+  width: 5rem;
   fill: black;
   animation: spinny 2s linear infinite;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.5rem 2rem;
+  appearance: none;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  background-color: transparent;
+  border-radius: 0.75rem;
+  border: 1px solid black;
+  transition: all 0.25s linear;
+}
+
+p {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
 }
 
 .yeah__nice {
   display: flex;
   align-items: center;
-  flex-direction: column;
 }
+
+/* ---------------------------------------------------------------- */
+/* ---------------General styling - utilities --------------------- */
+/* ---------------------------------------------------------------- */
+
+/* utility classes here */
+
+/* ---------------------------------------------------------------- */
+/* ---------------General styling - selectors---------------------- */
+/* ---------------------------------------------------------------- */
+
+/* class, id selectors etc.. here */
+
+/* ---------------------------------------------------------------- */
+/* ---------------General styling - media queries ----------------- */
+/* ---------------------------------------------------------------- */
+
+/* media queries here */
+
+/* ---------------------------------------------------------------- */
+/* ---------------General styling - keyframes --------------------- */
+/* ---------------------------------------------------------------- */
 
 @keyframes spinny {
   from {
