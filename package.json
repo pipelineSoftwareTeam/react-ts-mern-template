@@ -1,5 +1,5 @@
 {
-	"name": "@pipeline_software/react-ts-mern-template",
+	"name": "react-ts-mern-template",
 	"version": "1.0.0",
 	"description": "MERN app template with TypeScript",
 	"bin": {
@@ -14,6 +14,18 @@
 		"dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" ",
 		"format": "prettier --write ."
 	},
+	"keywords": [
+		"react",
+		"typescript",
+		"mern",
+		"express",
+		"mongoDB",
+		"vitest",
+		"vite",
+		"msw",
+		"template",
+		"starter"
+	],
 	"author": "Pipeline Software Team",
 	"license": "ISC",
 	"dependencies": {
