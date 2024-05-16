@@ -4,6 +4,12 @@ MERN App Template 💻
 </h1>
 </div>
 
+### Quickstart
+
+```
+$ npx react-ts-mern-template <your-app-name>
+```
+
 ---
 
 ### Project Starter 🚀
