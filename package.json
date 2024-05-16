@@ -1,6 +1,6 @@
 {
 	"name": "react-ts-mern-template",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "MERN app template with TypeScript",
 	"bin": {
 		"react-ts-mern-template": "bin/index.js"
