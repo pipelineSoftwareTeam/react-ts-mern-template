@@ -15,7 +15,7 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/pipelineSoftwareTeam/react-ts-mern-template.git ${repoName}`;
-const installDepsCommand = `cd ${repoName} && npm install`;
+const installDepsCommand = `cd ${repoName} && npm run setup`;
 
 console.log(`Cloning the repository: ${repoName}`);
 
@@ -27,7 +27,10 @@ const installedDeps = runCommand(installDepsCommand);
 if (!installedDeps) process.exit(-1);
 
 console.log(
-	'Oh yes 😏. The project if ready for you, punch the following commands into your terminal...'
+	'\nOh yes 😏. The project is ready for you, punch the following commands into your terminal...\n'
 );
-console.log(`cd ${repoName} && npm run setup`);
-console.log('npm run dev');
+console.log(`cd ${repoName} & npm run dev\n`);
+
+console.log(
+	'Each level can also be ran independently - see the package.json files for scripts'
+);

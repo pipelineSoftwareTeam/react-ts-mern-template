@@ -1,7 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 import { SmileySmiley } from '@/assets';
 import { Button } from '@/components';
+
+const Timer = () => {
+  const [time, setTime] = useState(0);
+
+  const adjustTime = useCallback(() => setTime((prevTime) => prevTime + 1), []);
+
+  useEffect(() => {
+    console.log(`Timer run ${Math.random()}`);
+    const timerInterval = setInterval(adjustTime, 1000);
+
+    return () => clearInterval(timerInterval);
+  }, [adjustTime]);
+
+  return <p>Time elapsed: {time} seconds</p>;
+};
 
 const Home = () => {
   const [isShowing, setIsShowing] = useState<boolean>(false);
@@ -13,7 +28,7 @@ const Home = () => {
         <SmileySmiley title="smiley" />
       </div>
       <Button
-        text={isShowing ? 'Hide Info' : 'Show Info'}
+        text={isShowing ? 'Hide Info' : 'SHOW'}
         onClick={() => setIsShowing(!isShowing)}
       />
       {isShowing && (
@@ -35,6 +50,7 @@ const Home = () => {
       >
         Top Secret Repo
       </a>
+      <Timer />
     </section>
   );
 };
